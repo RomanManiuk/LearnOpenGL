@@ -3,7 +3,10 @@ cmake_minimum_required(VERSION 3.0.0)
 set(PROJECT_NAME LearnOpenGL)
 project(${PROJECT_NAME})
 
-add_executable(${PROJECT_NAME} src/main.cpp)
+add_executable(${PROJECT_NAME}
+    src/main.cpp
+    src/renderer/ShaderProgram.h
+    src/renderer/ShaderProgram.cpp)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -17,6 +20,3 @@ target_link_libraries(${PROJECT_NAME} glfw)
 
 add_subdirectory(external/glm)
 target_link_libraries(${PROJECT_NAME} glm)
-
-
-
